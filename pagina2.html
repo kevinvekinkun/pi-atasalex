@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Página 2 - Catálogo de Piñatas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .custom-scroll::-webkit-scrollbar {
+        height: 6px;
+      }
+      .custom-scroll::-webkit-scrollbar-thumb {
+        background: #f472b6;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body class="bg-yellow-50 text-gray-800 font-sans min-h-screen flex flex-col">
+    <!-- Botón de WhatsApp flotante -->
+    <a
+      href="https://wa.me/5621386850"
+      class="fixed bottom-5 right-5 z-50"
+      target="_blank"
+      title="Chatea conmigo en WhatsApp"
+    >
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png"
+        alt="WhatsApp"
+        class="w-16 h-16 rounded-full shadow-lg hover:scale-110 transition-transform duration-300"
+      />
+    </a>
+    <!-- Header -->
+    <header class="bg-pink-500 text-white p-6 text-center shadow-lg">
+      <h1 class="text-3xl font-bold">Catálogo de Piñatas</h1>
+      <p class="mt-2 text-lg">
+        ¡Explora nuestras categorías y encuentra tu piñata favorita!
+      </p>
+    </header>
+
+    <!-- Selector de Categoría -->
+    <main class="flex-grow py-10 px-6 max-w-6xl mx-auto">
+      <div class="mb-8 flex flex-col items-center">
+        <label for="categoria" class="mb-2 font-semibold text-lg"
+          >Selecciona una categoría:</label
+        >
+        <select
+          id="categoria"
+          class="p-3 rounded-lg border-2 border-pink-400 focus:outline-none focus:ring-2 focus:ring-pink-400"
+          onchange="mostrarCategoria()"
+        >
+          <option value="todas">Todas</option>
+          <option value="heroes">Héroes</option>
+          <option value="princesas">Princesas</option>
+          <option value="anime">Anime</option>
+          <option value="otros">Otros</option>
+        </select>
+      </div>
+
+      <!-- Galería de Piñatas -->
+      <div id="productos" class="grid md:grid-cols-3 gap-8 custom-scroll">
+        <!-- Héroes -->
+        <div class="producto" data-categoria="heroes">
+          <img
+            src="spider.jpg"
+            alt="Piñata Spiderman"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata Spiderman</h3>
+          <p class="text-red-600 mt-2 font-semibold">$350</p>
+        </div>
+        <div class="producto" data-categoria="heroes">
+          <img
+            src="goku.jpg"
+            alt="Piñata Goku"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata Goku</h3>
+          <p class="text-red-600 mt-2 font-semibold">$550</p>
+        </div>
+        <div class="producto" data-categoria="heroes">
+          <img
+            src="batman.jpg"
+            alt="Piñata Batman"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata Batman</h3>
+          <p class="text-red-600 mt-2 font-semibold">$380</p>
+        </div>
+        <!-- Princesas -->
+        <div class="producto" data-categoria="princesas">
+          <img
+            src="frozen.jpg"
+            alt="Piñata Frozen"
+            class="w-full h-64 object-cover rounded-lg mb-4 transition-transform duration-300 hover:scale-105 hover:shadow-2xl"
+          />
+          />
+          <h3 class="text-xl font-bold">Piñata Frozen</h3>
+          <p class="text-pink-600 mt-2 font-semibold">$400</p>
+        </div>
+        <div class="producto" data-categoria="princesas">
+          <img
+            src="princesa.webp"
+            alt="Piñata Princesa Peach"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata Princesa Peach</h3>
+          <p class="text-red-600 mt-2 font-semibold">$700</p>
+        </div>
+        <div class="producto" data-categoria="princesas">
+          <img
+            src="unicornio.jpeg"
+            alt="Piñata Unicornio"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata Unicornio</h3>
+          <p class="text-red-600 mt-2 font-semibold">$350</p>
+        </div>
+        <!-- Anime -->
+        <div class="producto" data-categoria="anime">
+          <img
+            src="ONEPIECE.jpg"
+            alt="Piñata One Piece"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata One Piece</h3>
+          <p class="text-pink-600 mt-2 font-semibold">$400</p>
+        </div>
+        <div class="producto" data-categoria="anime">
+          <img
+            src="kuromi.jpg"
+            alt="Piñata Kuromi"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata Kuromi</h3>
+          <p class="text-red-600 mt-2 font-semibold">$350</p>
+        </div>
+        <div class="producto" data-categoria="anime">
+          <img
+            src="naruto.jpg"
+            alt="Piñata Naruto"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata Naruto</h3>
+          <p class="text-pink-600 mt-2 font-semibold">$370</p>
+        </div>
+        <div class="producto" data-categoria="anime">
+          <img
+            src="luffy.jpg"
+            alt="Piñata Luffy"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata Luffy (One Piece)</h3>
+          <p class="text-red-600 mt-2 font-semibold">$420</p>
+        </div>
+        <div class="producto" data-categoria="anime">
+          <img
+            src="sailormoon.jpg"
+            alt="Piñata Sailor Moon"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata Sailor Moon</h3>
+          <p class="text-pink-600 mt-2 font-semibold">$385</p>
+        </div>
+        <div class="producto" data-categoria="anime">
+          <img
+            src="pikachu.jpg"
+            alt="Piñata Pikachu"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata Pikachu</h3>
+          <p class="text-yellow-500 mt-2 font-semibold">$360</p>
+        </div>
+        <!-- Otros -->
+        <div class="producto" data-categoria="otros">
+          <img
+            src="mario.jpg"
+            alt="Piñata Mario Bros"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata Mario Bros</h3>
+          <p class="text-pink-600 mt-2 font-semibold">$450</p>
+        </div>
+        <div class="producto" data-categoria="otros">
+          <img
+            src="amongus.jpg"
+            alt="Piñata Among Us"
+            class="w-full h-64 object-cover rounded-lg mb-4"
+          />
+          <h3 class="text-xl font-bold">Piñata Among Us</h3>
+          <p class="text-pink-600 mt-2 font-semibold">$320</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a
+          href="https://wa.me/5525284178?text=Hola%2C+quiero+comprar+una+piñata"
+          target="_blank"
+          class="bg-green-500 text-white px-6 py-3 rounded-full text-lg hover:bg-green-600 transition"
+        >
+          📱 Hacer pedido por WhatsApp
+        </a>
+      </div>
+
+      <div class="text-center mt-6">
+        <button
+          onclick="location.href='index.html'"
+          class="bg-red-500 text-white px-6 py-3 rounded-full text-lg hover:bg-red-600 transition"
+        >
+          Volver a Página Principal
+        </button>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-red-600 text-white text-center py-4 mt-10">
+      © 2025 Piñatas ALEX. Todos los derechos reservados.
+    </footer>
+
+    <script>
+      function mostrarCategoria() {
+        var seleccion = document.getElementById("categoria").value;
+        var productos = document.querySelectorAll(".producto");
+        productos.forEach(function (prod) {
+          if (
+            seleccion === "todas" ||
+            prod.getAttribute("data-categoria") === seleccion
+          ) {
+            prod.style.display = "";
+          } else {
+            prod.style.display = "none";
+          }
+        });
+      }
+      // Inicializa mostrando todos
+      mostrarCategoria();
+    </script>
+  </body>
+</html>
